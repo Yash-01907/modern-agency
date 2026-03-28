@@ -1,0 +1,59 @@
+"use client";
+
+import React, { useRef, useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
+import Link from "next/link";
+import { Menu, X } from "lucide-react";
+
+export function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+  const headerRef = useRef<HTMLElement>(null);
+
+  const toggleMenu = () => setIsOpen(!isOpen);
+
+  return (
+    <header ref={headerRef} className="fixed top-0 left-0 w-full z-50 mix-blend-difference text-white">
+      <div className="container mx-auto px-6 py-8 flex justify-between items-center">
+        <Link href="/" className="text-2xl font-display font-bold uppercase tracking-tighter hover:text-gray-300 transition-colors">
+          Aesthete
+        </Link>
+        
+        <button onClick={toggleMenu} className="z-50 relative group">
+          <div className="w-8 h-8 flex flex-col justify-center gap-1.5 items-end">
+            <span className={`h-[2px] bg-white transition-all duration-300 ${isOpen ? "rotate-45 translate-y-2 w-8" : "w-8 group-hover:w-6"}`} />
+            <span className={`h-[2px] bg-white transition-all duration-300 ${isOpen ? "-rotate-45 -translate-y-2 w-8" : "w-5 group-hover:w-8"}`} />
+          </div>
+        </button>
+
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div 
+              initial={{ opacity: 0, clipPath: "circle(0% at 100% 0%)" }}
+              animate={{ opacity: 1, clipPath: "circle(150% at 100% 0%)" }}
+              exit={{ opacity: 0, clipPath: "circle(0% at 100% 0%)" }}
+              transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
+              className="fixed inset-0 bg-black text-white flex flex-col justify-center items-center h-screen w-screen z-40"
+            >
+              <nav className="flex flex-col gap-8 text-center">
+                {["Work", "About", "Services", "Contact"].map((item, i) => (
+                  <motion.a 
+                    key={item}
+                    href={`#${item.toLowerCase()}`}
+                    initial={{ y: 100, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: 100, opacity: 0 }}
+                    transition={{ delay: 0.1 * i, duration: 0.5 }}
+                    className="text-6xl md:text-8xl font-display font-bold hover:text-gray-400 transition-colors"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item}
+                  </motion.a>
+                ))}
+              </nav>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </header>
+  );
+}
