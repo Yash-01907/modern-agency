@@ -50,9 +50,9 @@ export function Services() {
               key={service.id} 
               className={`service-${i} border-b border-gray-200 py-12 px-6 md:px-12 transition-colors duration-300 relative group cursor-pointer overflow-hidden`}
             >
-              <div className="flex justify-between items-center mb-4">
+              <div className="flex items-center justify-start gap-4 md:justify-between md:gap-0 mb-4">
                 <span className="text-sm font-mono text-gray-400 group-hover:text-black transition-colors">0{service.id}</span>
-                <h3 className="text-4xl md:text-6xl font-display font-medium group-hover:italic transition-all duration-300">
+                <h3 className="flex-1 md:flex-none text-3xl sm:text-4xl md:text-6xl text-left whitespace-nowrap md:whitespace-normal font-display font-medium group-hover:italic transition-all duration-300">
                   {service.title}
                 </h3>
                 <span className="hidden md:block w-8 h-8 rounded-full border border-gray-300 group-hover:bg-black group-hover:border-black transition-colors duration-300" />

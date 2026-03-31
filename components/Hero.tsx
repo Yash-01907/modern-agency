@@ -63,11 +63,11 @@ export function Hero() {
         >
           <source src="https://cdn.coverr.co/videos/coverr-abstract-blue-liquid-ink-4444/1080p.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80" />
+        <div className="absolute inset-0 bg-linear-to-b from-transparent to-black/80" />
       </div>
 
       <div className="container relative z-10 px-6 mx-auto text-center text-white">
-        <h1 ref={titleRef} className="font-display font-bold text-6xl md:text-8xl lg:text-9xl tracking-tight leading-[0.9] mb-8 overflow-hidden">
+        <h1 ref={titleRef} className="font-display font-bold text-5xl sm:text-6xl md:text-8xl lg:text-9xl tracking-tight leading-[0.98] md:leading-[0.9] mb-8">
           <span className="inline-block overflow-hidden pb-4"><span className="word inline-block">Digital</span></span><br/>
           <span className="inline-block overflow-hidden pb-4"><span className="word inline-block">Experiences</span></span><br/>
           <span className="inline-block overflow-hidden pb-4"><span className="word inline-block text-gray-500">Reimagined</span></span>
