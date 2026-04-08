@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { gsap, useGSAP } from "@/lib/gsap";
 
 export function TextReveal({ text, className, delay = 0 }: { text: string, className?: string, delay?: number }) {

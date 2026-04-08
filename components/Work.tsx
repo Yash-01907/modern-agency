@@ -1,53 +1,33 @@
 "use client";
 
-import { useRef, useEffect } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
+import Link from "next/link";
+import { useRef } from "react";
+import { gsap, ScrollTrigger, useGSAP } from "@/lib/gsap";
+import { caseStudies } from "@/lib/caseStudies";
 import { ParallaxImage } from "./ui/ParallaxImage";
 
-const projects = [
-  { 
-    id: 1, 
-    title: "Vortex Gaming", 
-    src: "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2670&auto=format&fit=crop", 
-    color: "#ff3333" 
-  },
-  { 
-    id: 2, 
-    title: "EcoFuture", 
-    src: "https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?q=80&w=2574&auto=format&fit=crop", 
-    color: "#33ff99" 
-  },
-  { 
-    id: 3, 
-    title: "Neon Studio", 
-    src: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2670&auto=format&fit=crop", 
-    color: "#3366ff" 
-  },
-];
-
 export function Work() {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
 
-  useGSAP(() => {
-    // Horizontal scroll
-    const races = document.querySelector(".races");
-    
-    if (races && typeof window !== 'undefined') {
+  useGSAP(
+    () => {
+      const track = trackRef.current;
+      if (!track || typeof window === "undefined") return;
+
       const getScrollAmount = () => {
-        const racesWidth = races.scrollWidth;
-        return -(racesWidth - window.innerWidth);
+        const trackWidth = track.scrollWidth;
+        return -(trackWidth - window.innerWidth);
       };
 
-      const tween = gsap.to(races, {
+      const tween = gsap.to(track, {
         x: getScrollAmount,
         duration: 3,
         ease: "none",
       });
 
-      ScrollTrigger.create({
-        trigger: ".racesWrapper",
+      const scrollTrigger = ScrollTrigger.create({
+        trigger: containerRef.current,
         start: "top top",
         end: () => `+=${getScrollAmount() * -1}`,
         pin: true,
@@ -55,37 +35,83 @@ export function Work() {
         scrub: 1,
         invalidateOnRefresh: true,
       });
-    }
-  }, { scope: containerRef });
+
+      return () => {
+        scrollTrigger.kill();
+        tween.kill();
+      };
+    },
+    { scope: containerRef },
+  );
 
   return (
-    <section ref={containerRef} id="work" className="bg-black text-white py-24 min-h-screen racesWrapper overflow-hidden">
+    <section
+      ref={containerRef}
+      id="work"
+      className="racesWrapper bg-black text-white py-24 min-h-screen overflow-hidden"
+    >
       <div className="container mx-auto px-6 mb-16">
-        <h2 className="text-6xl md:text-8xl font-display font-bold uppercase tracking-tight">Selected<br/>Projects</h2>
+        <h2 className="text-6xl md:text-8xl font-display font-bold uppercase tracking-tight">
+          Selected
+          <br />
+          Projects
+        </h2>
       </div>
 
-      <div className="races flex gap-8 px-6 md:px-24 w-max h-[70vh]">
-        {projects.map((project, i) => (
-          <div 
-            key={project.id} 
-            className="w-[80vw] md:w-[60vw] h-full flex flex-col justify-between p-8 bg-gray-900 rounded-3xl overflow-hidden relative group"
+      <div ref={trackRef} className="races flex gap-8 px-6 md:px-24 w-max h-[72vh]">
+        {caseStudies.map((project) => (
+          <Link
+            key={project.id}
+            href={`/work/${project.slug}`}
+            className="w-[85vw] md:w-[62vw] h-full flex flex-col justify-between p-7 md:p-9 bg-gray-900 rounded-3xl overflow-hidden relative group"
           >
-            <div className="absolute inset-0 z-0 opacity-60 group-hover:opacity-100 transition-opacity duration-700">
-              <ParallaxImage 
-                src={project.src} 
-                alt={project.title} 
-                className="w-full h-full object-cover" 
-                speed={0.5} 
+            <div className="absolute inset-0 z-0 opacity-65 group-hover:opacity-100 transition-opacity duration-700">
+              <ParallaxImage
+                src={project.src}
+                alt={project.title}
+                className="w-full h-full object-cover"
+                speed={0.45}
               />
             </div>
-            
-            <div className="relative z-10 flex flex-col h-full justify-between">
-              <span className="text-xl font-mono text-white/50">0{project.id}</span>
-              <h3 className="text-5xl md:text-7xl font-display font-bold uppercase mix-blend-difference group-hover:translate-x-4 transition-transform duration-500">
-                {project.title}
-              </h3>
+
+            <div className="relative z-10 flex h-full flex-col justify-between">
+              <div className="flex items-start justify-between gap-4">
+                <span className="text-xl font-mono text-white/60">0{project.id}</span>
+                <span className="rounded-full border border-white/30 px-3 py-1 text-xs uppercase tracking-[0.2em] text-white/75">
+                  {project.timeline}
+                </span>
+              </div>
+
+              <div className="space-y-6">
+                <h3 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold uppercase mix-blend-difference group-hover:translate-x-3 transition-transform duration-500">
+                  {project.title}
+                </h3>
+                <p className="max-w-2xl text-base md:text-lg text-white/85 leading-relaxed">
+                  {project.description}
+                </p>
+
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full bg-black/45 border border-white/20 px-3 py-1 text-xs uppercase tracking-[0.16em] text-white/80"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-sm md:text-base text-white/90">
+                  <p className="max-w-xl">
+                    <span className="text-white/60">Result:</span> {project.result}
+                  </p>
+                  <span className="font-mono uppercase tracking-[0.16em] text-white/80 group-hover:text-white transition-colors">
+                    View case study →
+                  </span>
+                </div>
+              </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </section>

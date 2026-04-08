@@ -141,3 +141,9 @@ html.lenis body {
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
 }
+
+@layer components {
+  .section-kicker {
+    @apply font-mono text-sm uppercase tracking-[0.22em];
+  }
+}
