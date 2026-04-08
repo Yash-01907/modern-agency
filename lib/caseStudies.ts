@@ -18,63 +18,66 @@ export type CaseStudy = {
 export const caseStudies: CaseStudy[] = [
   {
     id: 1,
-    slug: "atlas-saas-launch",
-    title: "Atlas SaaS Launch",
-    client: "Atlas CRM",
-    year: "2025",
-    src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2515&auto=format&fit=crop",
+    slug: "b2b-saas-concept-site",
+    title: "B2B SaaS Launch Concept",
+    client: "Concept Project",
+    year: "2026",
+    src: "/portfolio/b2b-saas-concept.svg",
     color: "#4f46e5",
     description:
-      "Repositioned a complex CRM product into a clear, conversion-focused launch site for mid-market buyers.",
-    result: "Demo requests increased 2.4x within the first 60 days after launch.",
-    tags: ["Strategy", "UX/UI", "Next.js"],
-    timeline: "7 weeks",
+      "A concept website built to demonstrate how we simplify complex SaaS messaging into a clear, conversion-focused launch experience.",
+    result:
+      "Concept project — built to showcase information hierarchy, message clarity, and CTA flow for SaaS buyers.",
+    tags: ["Concept", "Strategy", "UX/UI", "Next.js"],
+    timeline: "Built in 2 weeks",
     problem:
-      "Atlas had a strong product, but website messaging was feature-heavy and generic. Visitors dropped before understanding the value proposition.",
+      "Early-stage SaaS teams often have strong products but unclear website narratives, causing visitors to drop before understanding core value.",
     build:
-      "We rebuilt the narrative architecture, designed a modular page system, and implemented a fast Next.js marketing site with clear demo funnels and proof sections.",
+      "We mapped a tighter messaging framework, designed a modular page system, and built responsive sections focused on fast comprehension.",
     outcome:
-      "The new funnel reduced friction in the decision journey and created a repeatable structure for future campaign pages.",
+      "This concept demonstrates our approach for structuring and shipping a high-clarity SaaS launch site without unnecessary complexity.",
   },
   {
     id: 2,
-    slug: "lumen-clinic-growth",
-    title: "Lumen Clinic Growth Site",
-    client: "Lumen Skin Clinic",
-    year: "2025",
-    src: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2670&auto=format&fit=crop",
+    slug: "clinic-website-concept",
+    title: "Clinic Booking Website Concept",
+    client: "Concept Project",
+    year: "2026",
+    src: "/portfolio/clinic-booking-concept.svg",
     color: "#0ea5e9",
     description:
-      "Designed and launched a local healthcare brand site focused on trust, clarity, and appointment conversion.",
-    result: "Online appointment bookings grew by 68% in the first quarter.",
-    tags: ["Branding", "Web Design", "SEO Foundations"],
-    timeline: "6 weeks",
+      "A healthcare-focused concept site designed to communicate trust quickly and guide users into a frictionless booking flow.",
+    result:
+      "Concept project — created to demonstrate trust-building layout patterns for local service businesses.",
+    tags: ["Concept", "Branding", "Web Design", "Local SEO"],
+    timeline: "Built in 10 days",
     problem:
-      "The clinic relied on referrals and a dated website that did not communicate expertise or convert mobile traffic.",
+      "Most local clinic websites feel outdated on mobile and bury critical decision information that patients need before booking.",
     build:
-      "We created a new identity direction, patient-first service pages, and a streamlined booking flow designed for local search intent.",
+      "We designed patient-first service pages, testimonial-ready trust sections, and a mobile-first booking path with clear intent cues.",
     outcome:
-      "The brand now has a strong digital presence and a website that supports both trust and day-to-day lead generation.",
+      "The concept acts as a blueprint for how we would build a practical, high-trust website for a local healthcare business.",
   },
   {
     id: 3,
-    slug: "vortex-gaming-campaign",
-    title: "Vortex Gaming Campaign",
-    client: "Vortex Gaming",
-    year: "2024",
-    src: "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2670&auto=format&fit=crop",
+    slug: "gaming-launch-concept",
+    title: "Gaming Campaign Microsite Concept",
+    client: "Concept Project",
+    year: "2026",
+    src: "/portfolio/gaming-campaign-concept.svg",
     color: "#f97316",
     description:
-      "Built an immersive campaign microsite combining performance storytelling and motion-driven product reveals.",
-    result: "Bounce rate dropped 31% while average session duration nearly doubled.",
-    tags: ["Creative Direction", "Motion", "Front-end Development"],
-    timeline: "5 weeks",
+      "A motion-led concept microsite showing how campaign storytelling can feel immersive while staying lightweight and conversion-aware.",
+    result:
+      "Concept project — produced to showcase pacing, interaction design, and visual identity for a launch campaign.",
+    tags: ["Concept", "Creative Direction", "Motion", "Front-end"],
+    timeline: "Built in 12 days",
     problem:
-      "Existing campaign pages loaded slowly and looked similar to competitors, leading to weak retention after ad clicks.",
+      "Launch campaigns often over-index on flashy visuals while missing narrative pacing and clear action paths.",
     build:
-      "We crafted a cinematic page flow with scroll choreography, optimized media delivery, and clear CTA placements tied to launch milestones.",
+      "We structured the experience around scroll-driven reveals, clear chapter transitions, and conversion points placed at intent peaks.",
     outcome:
-      "The campaign delivered stronger engagement and gave the internal marketing team reusable launch templates.",
+      "This concept demonstrates how we balance cinematic interaction with performance and practical campaign outcomes.",
   },
 ];
 

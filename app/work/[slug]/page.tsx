@@ -61,14 +61,14 @@ export default async function CaseStudyPage({
               <p className="text-xs uppercase tracking-[0.2em] text-white/60 mb-3">Timeline</p>
               <p className="text-2xl font-display">{caseStudy.timeline}</p>
 
-              <p className="text-xs uppercase tracking-[0.2em] text-white/60 mb-3 mt-8">Result</p>
+              <p className="text-xs uppercase tracking-[0.2em] text-white/60 mb-3 mt-8">Project note</p>
               <p className="text-lg text-white/85 leading-relaxed">{caseStudy.result}</p>
 
               <Link
                 href="/contact"
                 className="mt-8 inline-block rounded-full bg-white px-6 py-3 text-black font-medium hover:bg-gray-200 transition-colors"
               >
-                Start a similar project
+                Build this for your business
               </Link>
             </div>
           </div>
@@ -96,7 +96,7 @@ export default async function CaseStudyPage({
           </article>
 
           <article className="md:col-span-1">
-            <p className="text-sm font-mono uppercase tracking-[0.2em] text-white/60 mb-3">Outcome</p>
+            <p className="text-sm font-mono uppercase tracking-[0.2em] text-white/60 mb-3">What this demonstrates</p>
             <p className="text-white/85 leading-relaxed">{caseStudy.outcome}</p>
           </article>
         </div>

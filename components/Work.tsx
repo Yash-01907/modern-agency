@@ -52,10 +52,14 @@ export function Work() {
     >
       <div className="container mx-auto px-6 mb-16">
         <h2 className="text-6xl md:text-8xl font-display font-bold uppercase tracking-tight">
-          Selected
+          Concept
           <br />
           Projects
         </h2>
+        <p className="mt-6 max-w-2xl text-base md:text-lg text-white/70 leading-relaxed">
+          These are self-initiated concept builds created to demonstrate our process,
+          design quality, and implementation standards across different industries.
+        </p>
       </div>
 
       <div ref={trackRef} className="races flex gap-8 px-6 md:px-24 w-max h-[72vh]">
@@ -103,10 +107,10 @@ export function Work() {
 
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-sm md:text-base text-white/90">
                   <p className="max-w-xl">
-                    <span className="text-white/60">Result:</span> {project.result}
+                    <span className="text-white/60">Project note:</span> {project.result}
                   </p>
                   <span className="font-mono uppercase tracking-[0.16em] text-white/80 group-hover:text-white transition-colors">
-                    View case study →
+                    View project breakdown →
                   </span>
                 </div>
               </div>

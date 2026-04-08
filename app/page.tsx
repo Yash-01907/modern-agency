@@ -1,15 +1,16 @@
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
-import { TrustStrip } from "@/components/TrustStrip";
-import { FeaturedCaseStudy } from "@/components/FeaturedCaseStudy";
 import { Work } from "@/components/Work";
 import { About } from "@/components/About";
 import { Services } from "@/components/Services";
-import { Pricing } from "@/components/Pricing";
+import { FeaturedCaseStudy } from "@/components/FeaturedCaseStudy";
+import { WhyUs } from "@/components/WhyUs";
 import { Process } from "@/components/Process";
+import { Pricing } from "@/components/Pricing";
 import { Testimonials } from "@/components/Testimonials";
 import { Footer } from "@/components/Footer";
 import { CustomCursor } from "@/components/ui/CustomCursor";
+import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 
 export default function Home() {
   return (
@@ -17,15 +18,16 @@ export default function Home() {
       <CustomCursor />
       <Header />
       <Hero />
-      <TrustStrip />
-      <FeaturedCaseStudy />
       <Work />
       <About />
       <Services />
-      <Pricing />
+      <FeaturedCaseStudy />
+      <WhyUs />
       <Process />
+      <Pricing />
       <Testimonials />
       <Footer />
+      <WhatsAppFloat />
     </main>
   );
 }

@@ -3,9 +3,10 @@ import "./globals.css";
 import { SmoothScroll } from "@/components/SmoothScroll";
 
 export const metadata: Metadata = {
-  title: "AESTHETE | Digital Experience Agency",
-  description: "We build award-winning digital experiences for forward-thinking brands.",
-  keywords: ["web design", "digital agency", "creative development", "3d web", "branding"],
+  title: "AESTHETE | Web Design & Development Studio",
+  description:
+    "Strategy-first websites for local and early-stage businesses. Built fast with direct founder collaboration.",
+  keywords: ["web design", "digital agency", "next.js development", "branding", "surat"],
 };
 
 export default function RootLayout({

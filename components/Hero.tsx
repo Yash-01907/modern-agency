@@ -102,11 +102,14 @@ export function Hero() {
           ref={textRef}
           className="max-w-2xl mx-auto text-lg md:text-xl text-gray-300 font-light mb-12 leading-relaxed"
         >
-          We partner with ambitious teams to launch conversion-focused websites,
-          brand systems, and digital experiences that accelerate growth.
+          We build fast, focused websites for local and early-stage businesses.
+          Strategy included, no agency bloat.
         </p>
 
-        <div ref={ctaRef} className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
+        <div
+          ref={ctaRef}
+          className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6"
+        >
           <MagneticButton
             href="/contact"
             className="px-8 py-4 bg-white text-black rounded-full font-medium hover:bg-gray-200 transition-colors"
@@ -117,7 +120,7 @@ export function Hero() {
             href="/#work"
             className="px-8 py-4 border border-white/30 text-white rounded-full font-medium hover:bg-white/10 transition-colors backdrop-blur-sm"
           >
-            See Case Studies
+            See Concept Work
           </MagneticButton>
         </div>
       </div>

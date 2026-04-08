@@ -1,0 +1,47 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1600" y2="1000" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1A0B2E"/>
+      <stop offset="1" stop-color="#3B0A57"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#111827"/>
+      <stop offset="1" stop-color="#1F2937"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <circle cx="1320" cy="160" r="240" fill="#F472B6" fill-opacity="0.2"/>
+  <circle cx="240" cy="820" r="250" fill="#C084FC" fill-opacity="0.16"/>
+
+  <rect x="100" y="70" width="1400" height="860" rx="40" fill="#0B0F1A" fill-opacity="0.6" stroke="#F5D0FE" stroke-opacity="0.24"/>
+  <rect x="170" y="130" width="1260" height="730" rx="28" fill="url(#panel)"/>
+
+  <rect x="230" y="188" width="260" height="18" rx="9" fill="#F9A8D4" fill-opacity="0.85"/>
+  <rect x="1190" y="178" width="92" height="34" rx="17" fill="#DB2777"/>
+  <rect x="1296" y="178" width="92" height="34" rx="17" fill="#6D28D9"/>
+
+  <rect x="230" y="264" width="1160" height="228" rx="22" fill="#111827" stroke="#C084FC" stroke-opacity="0.3"/>
+  <rect x="282" y="308" width="520" height="20" rx="10" fill="#F8FAFC"/>
+  <rect x="282" y="342" width="390" height="14" rx="7" fill="#E2E8F0" fill-opacity="0.65"/>
+  <rect x="282" y="366" width="330" height="14" rx="7" fill="#E2E8F0" fill-opacity="0.45"/>
+  <rect x="282" y="412" width="182" height="42" rx="21" fill="#DB2777"/>
+  <rect x="478" y="412" width="168" height="42" rx="21" fill="#374151"/>
+
+  <rect x="868" y="300" width="470" height="156" rx="18" fill="#0F172A" stroke="#C4B5FD" stroke-opacity="0.4"/>
+  <rect x="902" y="332" width="180" height="14" rx="7" fill="#E9D5FF" fill-opacity="0.8"/>
+  <rect x="902" y="360" width="356" height="10" rx="5" fill="#E2E8F0" fill-opacity="0.28"/>
+  <rect x="902" y="382" width="270" height="10" rx="5" fill="#E2E8F0" fill-opacity="0.28"/>
+
+  <rect x="230" y="530" width="560" height="280" rx="22" fill="#111827" stroke="#C084FC" stroke-opacity="0.25"/>
+  <rect x="274" y="572" width="220" height="14" rx="7" fill="#E2E8F0" fill-opacity="0.7"/>
+  <rect x="274" y="604" width="472" height="164" rx="14" fill="#1F2937"/>
+
+  <rect x="830" y="530" width="560" height="280" rx="22" fill="#111827" stroke="#C084FC" stroke-opacity="0.25"/>
+  <rect x="874" y="572" width="220" height="14" rx="7" fill="#E2E8F0" fill-opacity="0.7"/>
+  <rect x="874" y="604" width="472" height="42" rx="12" fill="#312E81"/>
+  <rect x="874" y="662" width="472" height="42" rx="12" fill="#4C1D95"/>
+  <rect x="874" y="720" width="320" height="42" rx="12" fill="#DB2777"/>
+
+  <text x="170" y="955" fill="#FAE8FF" fill-opacity="0.85" font-family="Inter, sans-serif" font-size="24" letter-spacing="2">GAMING CAMPAIGN CONCEPT • AESTHETE</text>
+</svg>
