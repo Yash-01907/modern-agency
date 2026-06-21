@@ -1,5 +1,5 @@
 const defaultMessage =
-  "Hi Aesthete, I want to discuss a website project for my business.";
+  "Hi Raysden, I want to discuss a website project for my business.";
 
 export function WhatsAppFloat() {
   const phone = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.replace(/\D/g, "");

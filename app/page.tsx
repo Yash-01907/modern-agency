@@ -4,8 +4,6 @@ import { Work } from "@/components/Work";
 import { About } from "@/components/About";
 import { Services } from "@/components/Services";
 import { FeaturedCaseStudy } from "@/components/FeaturedCaseStudy";
-import { WhyUs } from "@/components/WhyUs";
-import { Process } from "@/components/Process";
 import { Pricing } from "@/components/Pricing";
 import { Testimonials } from "@/components/Testimonials";
 import { Footer } from "@/components/Footer";
@@ -22,8 +20,6 @@ export default function Home() {
       <About />
       <Services />
       <FeaturedCaseStudy />
-      <WhyUs />
-      <Process />
       <Pricing />
       <Testimonials />
       <Footer />

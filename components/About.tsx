@@ -59,7 +59,7 @@ export function About() {
 
             <div className="text-lg md:text-xl text-gray-600 space-y-8 max-w-2xl about-text leading-relaxed">
               <p>
-                We started Aesthete in 2024 to build thoughtful websites without
+                We started Raysden in 2024 to build thoughtful websites without
                 slow handoffs, bloated retainers, or generic templates.
               </p>
               <p>

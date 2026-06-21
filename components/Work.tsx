@@ -56,13 +56,12 @@ export function Work() {
     >
       <div className="container mx-auto px-6 mb-16">
         <h2 className="text-6xl md:text-8xl font-display font-bold uppercase tracking-tight">
-          Concept
+          Selected
           <br />
-          Projects
+          Work
         </h2>
         <p className="mt-6 max-w-2xl text-base md:text-lg text-white/70 leading-relaxed">
-          These are self-initiated concept builds created to demonstrate our process,
-          design quality, and implementation standards across different industries.
+          A collection of our recently in-house concept builds, showcasing our standards across different industries.
         </p>
       </div>
 
@@ -72,7 +71,11 @@ export function Work() {
             <Link
               key={project.id}
               href={`/work/${project.slug}`}
-              className="w-[85vw] md:w-[62vw] h-full flex flex-col justify-between p-7 md:p-9 bg-gray-900 rounded-3xl overflow-hidden relative group"
+              className="w-[85vw] md:w-[62vw] h-full flex flex-col justify-between p-7 md:p-9 rounded-3xl overflow-hidden relative group border border-white/5 hover:border-white/20 transition-colors duration-500"
+              style={{
+                backgroundColor: '#111827',
+                backgroundImage: `radial-gradient(circle at top right, ${project.color}30 0%, transparent 60%), radial-gradient(circle at bottom left, ${project.color}15 0%, transparent 50%)`
+              }}
             >
               <div className="absolute inset-0 z-0 opacity-65 group-hover:opacity-100 transition-opacity duration-700">
                 <ParallaxImage
@@ -85,7 +88,12 @@ export function Work() {
 
               <div className="relative z-10 flex h-full flex-col justify-between">
                 <div className="flex items-start justify-between gap-4">
-                  <span className="text-xl font-mono text-white/60">0{project.id}</span>
+                  <span 
+                    className="text-xl font-mono opacity-80 group-hover:opacity-100 transition-opacity" 
+                    style={{ color: project.color }}
+                  >
+                    0{project.id}
+                  </span>
                   <span className="rounded-full border border-white/30 px-3 py-1 text-xs uppercase tracking-[0.2em] text-white/75">
                     {project.timeline}
                   </span>
@@ -114,7 +122,10 @@ export function Work() {
                     <p className="max-w-xl">
                       <span className="text-white/60">Project note:</span> {project.result}
                     </p>
-                    <span className="font-mono uppercase tracking-[0.16em] text-white/80 group-hover:text-white transition-colors">
+                    <span 
+                      className="font-mono uppercase tracking-[0.16em] opacity-80 group-hover:opacity-100 transition-opacity"
+                      style={{ color: project.color }}
+                    >
                       View project breakdown →
                     </span>
                   </div>

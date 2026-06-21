@@ -49,7 +49,7 @@ export function ContactForm({
 
   return (
     <form className={className} onSubmit={handleSubmit}>
-      <input type="hidden" name="_subject" value="New project inquiry from Aesthete website" />
+      <input type="hidden" name="_subject" value="New project inquiry from Raysden website" />
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
@@ -217,7 +217,7 @@ export function ContactForm({
         <p className="mt-4 text-sm text-red-300">
           Submission failed. Please confirm your Formspree endpoint in
           <code className="mx-1 rounded bg-white/10 px-1 py-0.5 text-xs">NEXT_PUBLIC_FORMSPREE_ENDPOINT</code>
-          or email hello@aesthete.agency.
+          or email hello@raysden.agency.
         </p>
       )}
     </form>

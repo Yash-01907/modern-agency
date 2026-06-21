@@ -35,9 +35,16 @@ export default async function CaseStudyPage({
 
           <div className="mt-8 grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-10 lg:gap-16 items-start">
             <div>
-              <p className="text-sm uppercase tracking-[0.2em] text-white/60 mb-4">
-                {caseStudy.client} • {caseStudy.year}
-              </p>
+              <div className="flex flex-wrap items-center gap-3 mb-4">
+                <p className="text-sm uppercase tracking-[0.2em] text-white/60">
+                  {caseStudy.client} • {caseStudy.year}
+                </p>
+                {caseStudy.projectType && (
+                  <span className="rounded bg-white/10 px-2 py-0.5 text-xs font-medium text-white/80">
+                    {caseStudy.projectType}
+                  </span>
+                )}
+              </div>
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-semibold leading-[0.95] tracking-tight">
                 {caseStudy.title}
               </h1>
@@ -63,13 +70,35 @@ export default async function CaseStudyPage({
 
               <p className="text-xs uppercase tracking-[0.2em] text-white/60 mb-3 mt-8">Project note</p>
               <p className="text-lg text-white/85 leading-relaxed">{caseStudy.result}</p>
+              
+              {caseStudy.projectTypeNote && (
+                <p className="mt-4 text-sm text-white/50 leading-relaxed border-l-2 border-white/20 pl-3">
+                  {caseStudy.projectTypeNote}
+                </p>
+              )}
 
-              <Link
-                href="/contact"
-                className="mt-8 inline-block rounded-full bg-white px-6 py-3 text-black font-medium hover:bg-gray-200 transition-colors"
-              >
-                Build this for your business
-              </Link>
+              <div className="mt-8 flex flex-col gap-4">
+                {caseStudy.liveUrl && (
+                  <a
+                    href={caseStudy.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex justify-center items-center rounded-full bg-white px-6 py-3 text-black font-medium hover:bg-gray-200 transition-colors"
+                  >
+                    Visit live site ↗
+                  </a>
+                )}
+                <Link
+                  href="/contact"
+                  className={`inline-flex justify-center items-center rounded-full px-6 py-3 font-medium transition-colors ${
+                    caseStudy.liveUrl 
+                      ? "border border-white/20 text-white hover:bg-white/10" 
+                      : "bg-white text-black hover:bg-gray-200"
+                  }`}
+                >
+                  Build this for your business
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -96,7 +125,7 @@ export default async function CaseStudyPage({
           </article>
 
           <article className="md:col-span-1">
-            <p className="text-sm font-mono uppercase tracking-[0.2em] text-white/60 mb-3">What this demonstrates</p>
+            <p className="text-sm font-mono uppercase tracking-[0.2em] text-white/60 mb-3">Outcome</p>
             <p className="text-white/85 leading-relaxed">{caseStudy.outcome}</p>
           </article>
         </div>

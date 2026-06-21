@@ -28,7 +28,7 @@ export function Header() {
           href="/"
           className="text-2xl font-display font-bold uppercase tracking-tighter hover:text-gray-300 transition-colors"
         >
-          Aesthete
+          Raysden
         </Link>
 
         <button

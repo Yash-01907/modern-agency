@@ -100,10 +100,10 @@ export function Footer() {
               <p>
                 Prefer email?{" "}
                 <a
-                  href="mailto:hello@aesthete.agency"
+                  href="mailto:hello@raysden.agency"
                   className="text-white hover:text-gray-300 transition-colors"
                 >
-                  hello@aesthete.agency
+                  hello@raysden.agency
                 </a>
               </p>
               <p>Based in Surat, Gujarat</p>
@@ -112,7 +112,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 font-mono">
-          <p>&copy; {new Date().getFullYear()} Aesthete Agency. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Raysden Agency. All rights reserved.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
             <a href="#" className="hover:text-white transition-colors">
               Privacy Policy
