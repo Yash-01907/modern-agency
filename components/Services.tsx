@@ -45,6 +45,8 @@ export function Services() {
   useGSAP(
     () => {
       const cleanups: Array<() => void> = [];
+      let activeIndex = -1;
+      const closeItemFns: Array<() => void> = [];
 
       services.forEach((_, index) => {
         const serviceItem = containerRef.current?.querySelector(`.service-${index}`);
@@ -54,34 +56,64 @@ export function Services() {
 
         gsap.set(content, { height: 0, opacity: 0 });
 
-        const onEnter = () => {
-          gsap.to(content, {
-            height: "auto",
-            opacity: 1,
-            duration: 0.5,
-            ease: "power2.out",
-          });
-          gsap.to(serviceItem, { backgroundColor: "#f3f4f6", duration: 0.3 });
+        const open = () => {
+          gsap.to(content, { height: "auto", opacity: 1, duration: 0.5, ease: "power2.out", overwrite: "auto" });
+          gsap.to(serviceItem, { backgroundColor: "#f3f4f6", duration: 0.3, overwrite: "auto" });
         };
 
-        const onLeave = () => {
-          gsap.to(content, {
-            height: 0,
-            opacity: 0,
-            duration: 0.5,
-            ease: "power2.out",
-          });
-          gsap.to(serviceItem, { backgroundColor: "transparent", duration: 0.3 });
+        const close = () => {
+          gsap.to(content, { height: 0, opacity: 0, duration: 0.5, ease: "power2.out", overwrite: "auto" });
+          gsap.to(serviceItem, { backgroundColor: "transparent", duration: 0.3, overwrite: "auto" });
         };
 
-        serviceItem.addEventListener("mouseenter", onEnter);
-        serviceItem.addEventListener("mouseleave", onLeave);
+        closeItemFns[index] = close;
+
+        const onMouseEnter = () => {
+          if (window.matchMedia("(hover: none)").matches) return;
+          if (activeIndex === index) return;
+          open();
+        };
+
+        const onMouseLeave = () => {
+          if (window.matchMedia("(hover: none)").matches) return;
+          if (activeIndex === index) return;
+          close();
+        };
+
+        const onClick = (e: Event) => {
+          e.stopPropagation();
+          if (activeIndex === index) {
+            close();
+            activeIndex = -1;
+          } else {
+            if (activeIndex !== -1 && closeItemFns[activeIndex]) {
+              closeItemFns[activeIndex]();
+            }
+            open();
+            activeIndex = index;
+          }
+        };
+
+        serviceItem.addEventListener("mouseenter", onMouseEnter);
+        serviceItem.addEventListener("mouseleave", onMouseLeave);
+        serviceItem.addEventListener("click", onClick);
 
         cleanups.push(() => {
-          serviceItem.removeEventListener("mouseenter", onEnter);
-          serviceItem.removeEventListener("mouseleave", onLeave);
+          serviceItem.removeEventListener("mouseenter", onMouseEnter);
+          serviceItem.removeEventListener("mouseleave", onMouseLeave);
+          serviceItem.removeEventListener("click", onClick);
         });
       });
+
+      const onDocumentClick = () => {
+        if (activeIndex !== -1 && closeItemFns[activeIndex]) {
+          closeItemFns[activeIndex]();
+          activeIndex = -1;
+        }
+      };
+
+      document.addEventListener("click", onDocumentClick);
+      cleanups.push(() => document.removeEventListener("click", onDocumentClick));
 
       return () => {
         cleanups.forEach((cleanup) => cleanup());
